@@ -85,7 +85,7 @@ public class ScreenShotBuilder extends Builder implements SimpleBuildStep {
     capabilities.setCapability(ChromeOptions.CAPABILITY, options);
     WebDriver driver = new RemoteWebDriver(new URL(seleniumUrl), capabilities);
     for (int i = 0; i < htmlFiles.size(); i++) {
-      String htmlFile = driverGetPath + htmlFiles.get(i);
+      String htmlFile = htmlFiles.get(i);
       driver.get(htmlFile);
       TakesScreenshot screenshot = ((TakesScreenshot) driver);
       File screenshotFile = screenshot.getScreenshotAs(OutputType.FILE);

@@ -11,13 +11,13 @@ import hudson.FilePath;
 public class TestScreenshot {
   @Test
   public void test() {
-    ScreenShotBuilder screenShotBuilder = new ScreenShotBuilder("http://140.134.26.76:38808/wd/hub");
+    ScreenShotBuilder screenShotBuilder = new ScreenShotBuilder("http://140.134.26.76:38101/wd/hub");
     // E:\\project\\WebStart\\src\\web\\html\\index.html
-    String workspace = "E:\\project\\ProgEdu\\screenshotjenkinsplugin\\WebStart";
+    String workspace = ".\\WebStart";
     List<String> file = new ArrayList<>();
-    file.add("E:\\project\\ProgEdu\\screenshotjenkinsplugin\\WebStart\\src\\web\\html\\index.html");
-    file.add("E:\\project\\ProgEdu\\screenshotjenkinsplugin\\WebStart\\src\\web\\html\\sec.html");
-    file.add("E:\\project\\ProgEdu\\screenshotjenkinsplugin\\WebStart\\src\\web\\html\\table.html");
+    file.add("http://140.134.26.76:28888/index.html");
+    file.add("http://140.134.26.76:28888/sec.html");
+    file.add("http://140.134.26.76:28888/table.html");
     try {
       screenShotBuilder.screenshotMethod(workspace, file);
     } catch (IOException e) {
