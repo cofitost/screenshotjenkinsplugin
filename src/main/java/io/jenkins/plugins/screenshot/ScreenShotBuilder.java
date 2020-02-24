@@ -68,7 +68,7 @@ public class ScreenShotBuilder extends Builder implements SimpleBuildStep {
   // --step 1/--
   
   // --step 2--
-  private void screenshotMethod(FilePath workspace, List<String> htmlFiles, TaskListener listener) throws IOException {
+  public void screenshotMethod(String workspace, List<String> htmlFiles) throws IOException {
     String screenshotPath = workspace + "/target/screenshot/";
 
     String driverGetPath = "file:////var/lib/workspace/";
@@ -92,7 +92,7 @@ public class ScreenShotBuilder extends Builder implements SimpleBuildStep {
       String fileName = new File(htmlFiles.get(i)).getName();//get HTML file name
       FileUtils.copyFile(screenshotFile, new File(screenshotFolder + "/" + fileName + ".png"));
     }
-    listener.getLogger().println("save the screenshot png in target/screenshot/");
+    // listener.getLogger().println("save the screenshot png in target/screenshot/");
     driver.quit();
   }
   // --step 2/--
@@ -110,7 +110,7 @@ public class ScreenShotBuilder extends Builder implements SimpleBuildStep {
     }
 
     // step2: screenshot method
-    screenshotMethod(workspace, htmlFiles, listener);
+    // screenshotMethod(workspace, htmlFiles, listener);
   }
 
   @Symbol("greet")
