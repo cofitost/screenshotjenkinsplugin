@@ -48,7 +48,7 @@ public class ScreenShotBuilder extends Builder implements SimpleBuildStep {
   }
 
   // --step 1--
-  private static List<String> searchAllHtmlFile(String filePath) {
+  public static List<String> searchAllHtmlFile(String filePath) {
     List<String> allFiles = null;
     try (Stream<Path> walk = Files.walk(Paths.get(filePath))) {
 

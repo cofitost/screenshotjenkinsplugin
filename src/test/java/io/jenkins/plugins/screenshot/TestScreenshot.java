@@ -6,11 +6,16 @@ import java.util.List;
 
 import org.junit.Test;
 
-import hudson.FilePath;
-
 public class TestScreenshot {
   @Test
-  public void test() {
+  public void testSearch() {
+    ScreenShotBuilder screenShotBuilder = new ScreenShotBuilder("http://140.134.26.76:38101/wd/hub");
+    String filePath = ".\\WebStart";
+    System.out.print(screenShotBuilder.searchAllHtmlFile(filePath));
+  }
+
+  @Test
+  public void testScreenMethod() {
     ScreenShotBuilder screenShotBuilder = new ScreenShotBuilder("http://140.134.26.76:38101/wd/hub");
     // E:\\project\\WebStart\\src\\web\\html\\index.html
     String workspace = ".\\WebStart";
